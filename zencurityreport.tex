@@ -1,0 +1,314 @@
+% Henrik Lund, spring/summer 1998
+% My own packages and commands
+% included by
+% command: \input{stdpack.tex}
+
+\usepackage{fancyhdr}
+\RequirePackage[utf8x]{inputenc}
+
+\usepackage[T1]{fontenc}
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+
+%\usepackage[rflt]{floatflt}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{color}
+%\usepackage[dvips]{epsfig}
+%BASE URL's for RFC repositories:
+%ftp://ftp.ietf.org/rfc - the home
+%ftp://sunsite.dk/mirrors/rfc - danish mirror
+\usepackage[pdftitle={Zencurity materials
+},pdfauthor={Henrik Lund Kramshoej},colorlinks,
+urlcolor={zencurity},menucolor={zencurity},citecolor={zencurity},
+pagecolor={blue},linkcolor={zencurity}]{hyperref}
+\usepackage{makeidx}
+\usepackage{calc}
+%\usepackage{layout}
+\usepackage{amsmath}
+
+\usepackage{hhline}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{dcolumn}
+\newcolumntype{.}{D{.}{.}{-1}}
+\usepackage[danish,english]{babel}
+\usepackage{wasysym}
+\usepackage{fancyvrb}
+%using fancyvrb currently \usepackage{listings}
+\usepackage{alltt}
+
+%\usepackage{microtype}
+
+%\usepackage{ulem}
+\usepackage{listings}
+\usepackage{vhistory}
+\usepackage{rotating}
+
+\input{zencurity.tex}
+
+\makeindex
+% LaTeX companion page 93
+% page layout
+% A4 210mm * 297mm
+% left and right margin 25 mm
+%\setlength{\hoffset}{-1 inch +2.5 cm }
+\setlength{\hoffset}{-5.4mm}
+
+\setlength{\oddsidemargin}{0mm}
+\setlength{\textwidth}{17cm}
+
+% top and bottom margin 25 mm
+\setlength{\voffset}{-15.4mm}
+\setlength{\topmargin}{0mm}
+\setlength{\marginparwidth}{0mm}
+\setlength{\marginparsep}{3mm}
+\setlength{\headsep}{13mm}
+% \setlength{\marginparpush}{0mm}
+
+%\setlength{\textheight}{24.7cm - 96pt}
+\setlength{\textheight}{\paperheight-\headheight-\headsep-\footskip-32mm}
+\setlength{\parindent}{0mm}
+
+\addtolength{\parskip}{\baselineskip}
+
+
+
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]%
+                  {\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]%
+                  {\markright{\thesection\ #1}}
+% header
+\lhead{\fancyplain{}{\color{titlecolor}\bfseries\rightmark}}
+\chead{Offentligt - Uklassificeret}
+\lfoot{{Zencurity ApS}}
+\cfoot{\fancyplain{}{}}
+%\rfoot{\fancyplain{}{Page \color{titlecolor}\bfseries\thepage\ of \pageref{LastPage}}}
+\rfoot{{Side \color{titlecolor}\bfseries\thepage\ af \pageref{LastPage}}}
+%\chead{Fortrolig}
+
+
+\renewcommand{\headrulewidth}{0pt}
+
+% plain also redefined so chapter pages look alright
+\fancypagestyle{plain}{%
+\fancyhf{}%
+\chead{Offentligt - Uklassificeret}
+%\chead{Fortroligt}
+%\chead{Fortrolig}
+%\lfoot{\bfseries \leftmark}
+\rfoot{{\color{titlecolor}\bfseries Page \thepage\ of \pageref{LastPage}}}
+}
+
+
+% std sizes: tiny scriptsize footnotesize small normalsize large Large
+% LARGE huge Huge
+
+% Usefull commands
+\newcommand{\Index}[1]{#1\index{#1}}
+\newcommand{\titel}[1]{{\emph{#1}}}
+\newcommand{\command}[1]{{\tt #1}}
+\newcommand{\update}[1]{{\bf \emph{\lightning\ #1 \lightning\ }\\}}
+\newcommand{\link}[1]{\href{#1}{#1}}
+\newcommand{\rfclink}[1]{\href{rfc#1.txt}{RFC-#1}}
+\newcommand{\file}[1]{{\scriptsize\verbatimtabinput{#1}}}
+
+\newcommand{\hlkimage}[2]{\begin{center}\colorbox{white}{\includegraphics[width=#1]{#2}}\end{center}}
+
+
+% fancyvrb package stuff
+%\fvset{frame=single,numbers=left, numbersep=3pt}
+
+
+\fvset{frame=single,xleftmargin=10mm,xrightmargin=10mm, fontsize=\scriptsize,boxwidth=auto}
+
+\newcommand{\unix}{{\sc unix} }
+\def\unix{{\sc unix}\footnote{{\sc unix} is trademark of X/Open in
+the USA and other countries. I use the term to describe a generic family of
+operating systems with a common characteristics.}\gdef\unix{{\sc unix}
+}}
+
+\newcommand{\diku}{DIKU}
+\def\diku{DIKU, Department of Computer Science University of
+Copenhagen, Denmark\gdef\diku{DIKU}}
+
+\newcommand{\dikudk}{DIKU}
+\def\dikudk{DIKU, Datalogisk Institut ved Kï¿½benhavns
+Universitet\gdef\dikudk{DIKU}}
+
+% Line spacing
+%\renewcommand{\baselinestretch}{1}
+%\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{2}
+
+\newcommand{\linieafstand}[1]{\renewcommand{\baselinestretch}{#1}\normalsize}
+
+\newcommand{\normal}{\renewcommand{\baselinestretch}{1}\normalsize}
+\newcommand{\double}{\renewcommand{\baselinestretch}{1.5}\normalsize}
+
+
+% hmmm breaks with table of contents, says titlecolor is undefined!
+%\addto\captionsdanish{%
+%  \renewcommand{\chaptername}{\color{titlecolor}ï¿½velse}%
+%  \renewcommand{\contentsname}{\color{titlecolor}Indhold}%
+%\renewcommand{\abstractname}{\color{titlecolor}\abstractname}%
+%}
+
+% from http://www.eksperten.dk/spm/478340
+%\addto\captionsdanish{%
+%  \def\prefacename{Forord}%
+%  \def\refname{Litteratur}%
+%  \def\abstractname{Resum\'e}%
+%  \def\bibname{Litteratur}%
+%  \def\chaptername{Kapitel}%
+%  \def\appendixname{Appendiks}%
+%  \def\contentsname{Indhold}%
+%  \def\listfigurename{Figurer}%
+%  \def\listtablename{Tabeller}%
+%  \def\indexname{Indeks}%
+%  \def\figurename{Figur}%
+%  \def\tablename{Tabel}%
+%  \def\partname{Del}%
+%  \def\pagename{Side}%
+%  \def\seename{Se}%
+%  \def\alsoname{Se ogs{\aa}}%
+%  \def\proofname{Bevis}%
+%  \def\glossaryname{Ordliste}%
+%}%
+
+\addto\captionsdanish{%
+%  \renewcommand{\chaptername}{\color{titlecolor}ï¿½velse}%
+  \renewcommand{\abstractname}{\color{titlecolor}Resume}
+  \renewcommand{\prefacename}{\color{titlecolor}Forord}%
+  \renewcommand{\chaptername}{\color{titlecolor}Kapitel}%
+  \renewcommand{\contentsname}{\color{titlecolor}Indhold}%
+  \renewcommand{\appendixname}{\color{titlecolor}Bilag}
+}
+\addto\captionsenglish{%
+  \renewcommand{\abstractname}{\color{titlecolor}Abstract}
+  \renewcommand{\prefacename}{\color{titlecolor}Preface}
+  \renewcommand{\chaptername}{\color{titlecolor}Chapter}%
+  \renewcommand{\contentsname}{\color{titlecolor}Contents}%
+  \renewcommand{\appendixname}{\color{titlecolor}Appendix}
+}
+%\bibname 	Bibliography (report,book)
+%\figurename 	Figure (for captions)
+%\indexname 	Index
+%\listfigurename 	List of Figures
+%\listtablename 	List of Tables
+%\partname 	Part
+%\refname 	References (article)
+%\seename 	see (makeidx package)
+%\tablename 	Table (for caption)
+
+
+
+\newcommand{\mytitle}[3]{
+
+\vskip 6 cm
+
+\title{\color{titlecolor}\LARGE \bfseries#1 \\ {\normalsize #2}}
+
+\author{Henrik Lund Kramshoej\\
+\href{mailto:hlk@zencurity.dk}{hlk@zencurity.dk}}
+%\date{\today}
+
+%\date{}
+%\maketitle
+
+
+\begin{center}
+\colorbox{white}{\includegraphics[width=2cm]{zencurity-web-logo.png}}
+\end{center}
+
+\vskip 2cm
+
+{\usefont{T1}{fvs}{l}{n}\scshape
+\LARGE #1\\
+for #2}
+
+\vskip 3cm
+%\hlkimage{\linewidth-5cm}{#3}
+
+
+
+\begin{tabular}{l l}
+Kunde: & \contacts\\
+
+Forfatter: & \consultant\\
+Version & \vhCurrentVersion\\
+Dato: & \vhCurrentDate\\
+Dokument id: & \docnumber\\
+Fortrolighedsniveau: & \confidentiality
+\end{tabular}
+}
+
+
+\newenvironment{list1}%
+{\begin{list}{}{\normalsize\setlength{\leftmargin}{0mm}\setlength{\itemsep}{0.3ex}}}
+{\end{list}\normalsize}
+
+\newenvironment{list2}%
+{\begin{list}{\small\textcolor{darkgreen}{$\bullet$}}{\setlength{\leftmargin}{15mm}\setlength{\itemsep}{0.5mm}}\small}
+{\end{list}\normalsize}
+
+\newenvironment{checklist}%
+{\begin{list}{$\Box$}{}}
+{\end{list}\normalsize}
+
+
+\newcommand{\companyaddresskbh}{
+Copenhagen
+
+Zencurity ApS\\
+Avnbøl Alle 7\\
+DK-2770 Copenhagen\\
+Denmark
+
+Tel: 2026 6000
+}
+
+\newcommand{\companyaddressballerup}{
+
+Ballerup
+
+Zencurity ApS\\
+c/o Solido Hosting A/S\\
+Industriparken 20 A\\
+DK-2750 Ballerup\\
+
+Tlf: 70 26 80 90\\
+Fax: 70 26 80 91
+}
+
+
+%\rm
+\newcommand{\zencurityprofile}{
+\section*{About Zencurity Aps}
+
+Zencurity ApS is a consulting company founded in 2015 by Henrik Lund KramshÃ¸j with a focus on internet infrastructure and security.
+
+%\subsection*{Henrik Lund Kramshøj, CEO \& co-founder}
+
+%Henrik Lund Kramshï¿½j is the CEO and founder of Zencurity ApS. He began his professional career while studying at university and has a Master Degree in Computer Science from the Department of Computer Science, University of Copenhagen DIKU, Denmark. Henrik is also a Certified Information Systems Security Professional (CISSP) an internationally recognized certification from (ISC)ï¿½
+
+%Former positions held have been: Senior Consultant in WM-data, Security Researcher for Neupart A/S, Group Manager in VIGILANTe Inc, and Owner of Security6.net consulting company from 2003 to 2010.
+
+%Henrik is also a known speaker on subjects such as UNIX Security, Internet Privacy Issues, Using Cryptography Technologies and Computer Forensics.
+
+\subsection*{Contact Information}
+\companyaddresskbh\\
+Tax number (CVR): DK3294 1184
+
+\link{http://zencurity.com/}
+
+}
+
+
+%%% Local Variables:
+%%% mode: plain-tex
+%%% TeX-master: "mac-osx-bog"
+%%% End:
