@@ -1,8 +1,6 @@
 \documentclass[a4paper,11pt,notitlepage]{report}
 \input{zencurityreport}
 
-%\usetypescript[times][uc]
-%\setupbodyfont[times]
 
 \begin{document}
 
@@ -107,6 +105,24 @@ Mit navn er Henrik Lund Kramshøj, uddannet cand.scient fra Datalogisk Institut 
 Jeg er certificeret CISSP siden 2003 og tidligere haft certificeringer som CEH, Juniper  Service Provider Routing and Switching, Specialist (JNCIS-SP) (udløb 2019) m.fl.
 
 Jeg har arbejdet professionelt med it-sikkerhed og netværk siden midt 1990erne.
+
+\chapter{Konklusion}
+
+Emnet for dette dokument er at beskrive IP-adresser og udvalgte emner omkring routersikkerhed, trådløs sikkerhed og malware i forbindelse med private forbrugeres niveau af samme.
+
+Indenfor dette emne er der nogle konklusioner:
+\begin{itemize}
+\item Emnet IT-sikkerhed er komplekst og private forbrugere ønsker ikke at beskæftige sig med emnet
+\item Udstyr der udleveres af internetudbydere til brug hos private er af en ringe kvalitet sikkerhedsmæssigt og det er sandsynligt at der er kendte og ukendte sikkerhedshuller som kan udnyttes af kriminelle
+\item Computere som benyttes af private er i høj grad ofte utidssvarende, ikke opdaterede, inficeret med malware i variende grad og må betragtes som værende usikre. Dette inkluderer bærbare computere, tablets, telefoner samt internetopkoblede enheder som kameraer, smart TV, smarte højtalere (Internet of Things) mv.
+\item Sikring af netværk kræver dyb teknisk indsigt og ved undervisning gennem mere end 15 år primært til IT-professionelle er det tydeligt at selv blandt disse er der meget få som har det fulde overblik over IT-sikkerhed og viden om at opretholde et højt sikkerhedsniveau
+\end{itemize}
+
+Når sikkerheden således hos forbrugere generelt er ringe skal man være varsom med at stole for meget på data der peger på en bestemt internetforbindelse som oprindelse for bestemte typer trafik.
+
+Selv professionelle IT-brugere har svært ved at designe og implementere sikre netværk med professionelt udstyr, og har ligeledes problemer med sikring af enheder der tilsluttes.
+
+Derfor vil professionelle IT-sikkerhedsfolk være vidende om at angreb, spam, og andre typer skadelig trafik ofte er iværksat af andre end ejere af enheder, og forbindelser.
 
 
 \chapter{Internet}
@@ -320,6 +336,8 @@ Malware kan inficere en brugers computer gennem websider og browsere, via email 
 
 Det er meget almindeligt at private computere er inficeret med malware. Det drejer sig om eksempelis 114.000 inficeret af en type i 2014,\\ {\footnotesize\url{https://www.computerworld.dk/art/229672/saa-mange-danske-maskiner-er-fanget-i-et-botnet}}
 
+Det bemærkes at netop den manglende sikkerhed på computere hos private er årsagen til indførelse af NemID baseret på \emph{papkortet}.
+
 2.  Vil du beskrive hvad et router angreb er?
 
 Routerangreb er når ydersiden af netværket - routeren som skaber forbindelse til internet angribes. Disse har typisk kendte sikkerhedsfejl og generelt dårlig software. Kriminelle kan således angribe disse enheder og efterfølgende tilgå det interne netværk, eller sende skadelig trafik til internet - herunder DDoS angreb og spam.
@@ -334,7 +352,7 @@ Når denne type funktion misbruges vil det se ud som om trafikken kommer fra for
 {\footnotesize\url{https://www.akamai.com/us/en/multimedia/documents/white-paper/upnproxy-blackhat-proxies-via-nat-injections-white-paper.pdf}}
 
 Billede fra samme paper:
-\hlkimage{12cm}{upnp-proxy.png}
+\hlkimage{12cm}{images/upnp-proxy.png}
 
 4.  Hvor sandsygt vil du sige det er, at almindelige private har computere, som er inficerede af Malware?
 
@@ -379,7 +397,7 @@ Et eksempel på Domain Name Service (DNS) opslag vises nedenfor.
 
 Hvis en bruger sidder med en computer og vil tilgå en hjemmeside sker det oftest ved brug af en browser. Det kunne være Firefox eller Chrome som vist på tegningen:
 
-\hlkimage{6cm}{dnssec-trigger.png}
+\hlkimage{6cm}{images/dnssec-trigger.png}
 
 Når der indtastes et navn, eksempelvis \verb+henrik.kramse.dk+ vil DNS på klienten forespørge:
 
