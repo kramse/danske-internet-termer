@@ -1,4 +1,4 @@
-% Henrik Lund, spring/summer 1998
+% Henrik Kramselund <hlk@zencurity.dk>
 % My own packages and commands
 % included by
 % command: \input{stdpack.tex}
@@ -47,7 +47,12 @@ pagecolor={blue},linkcolor={zencurity}]{hyperref}
 \usepackage{vhistory}
 \usepackage{rotating}
 
-\input{zencurity.tex}
+\definecolor{zencurity}{rgb}{0.25,0.25,0.25}
+\renewcommand\normalcolor{\color{zencurity}}
+\definecolor{titlecolor}{rgb}{0.25,0.25,0.25}
+
+\definecolor{gray}{rgb}{0.7,0.7,0.7}
+\definecolor{darkgreen}{rgb}{0.2,0.7,0.2}
 
 \makeindex
 % LaTeX companion page 93
@@ -221,7 +226,7 @@ Universitet\gdef\dikudk{DIKU}}
 
 
 \begin{center}
-\colorbox{white}{\includegraphics[width=4cm]{images/zencurity-web-logo.png}}
+\colorbox{white}{\includegraphics[width=4cm]{../images/zencurity-web-logo.png}}
 \end{center}
 
 \vskip 2cm
